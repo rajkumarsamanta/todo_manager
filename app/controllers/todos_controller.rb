@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     render plain: Todo.all.to_displayable_list.join("\n") #"Hello,  This is /todos!"
   end
