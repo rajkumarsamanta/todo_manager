@@ -19,6 +19,6 @@ ActiveRecord::Migration.create_table(:users) do |t|
   t.column :password, :text
 end
 
-User.create!(name: "Raj Kumar", email: "some@xyz.com", password: "Some-xyzcom")
-User.create!(name: "Vivek Kumar", email: "vivek@xyz.com", password: "Vivek-xyzcom")
-User.create!(name: "Bikash Sharma", email: "bikash@sharma.com", password: "Bikash-sharma")
+# User.create!(name: "Raj Kumar", email: "some@xyz.com", password: "Some-xyzcom")
+# User.create!(name: "Vivek Kumar", email: "vivek@xyz.com", password: "Vivek-xyzcom")
+# User.create!(name: "Bikash Sharma", email: "bikash@sharma.com", password: "Bikash-sharma")

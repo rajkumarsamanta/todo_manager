@@ -36,10 +36,10 @@ class UsersController < ApplicationController
   end
 
   def login
-    id = params[:id]
-    user = User.find(id)
-    login_status
-    if ((user.email == params[:email]) && (user.password = params[:password]))
+    user_email = params[:email].downcase
+    passwd = params[:password]
+    user = User.where("email=? and password =?", user_email, passwd)
+    if (user)
       login_status = true
     else
       login_status = false
