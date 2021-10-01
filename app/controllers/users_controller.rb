@@ -16,8 +16,8 @@ class UsersController < ApplicationController
     email = params[:email]
     password = params[:password]
     new_user = User.create!(
-      name: name.downcase,
-      email: email.downcase,
+      name: name,
+      email: email,
       password: password,
     )
     response_text = "Hey, your new user is created with id #{new_user.id}"
@@ -29,16 +29,16 @@ class UsersController < ApplicationController
     email = params[:email]
     password = params[:password]
     user = User.find(id)
-    user.email = email.downcase
+    user.email = email
     user.password = password
     user.save!
     render plain: "Updated user email and password !"
   end
 
   def login
-    user_email = params[:email].downcase
+    user_email = params[:email]
     passwd = params[:password]
-    user = User.where("email=? and password =?", user_email, passwd)
+    user = User.find_by(email: user_email, password: passwd)
     if (user)
       login_status = true
     else
