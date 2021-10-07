@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Raj Kumar's SaaS 201 target - Todo-list app</title>
-    <link rel="stylesheet" type="text/css" href="todo-app.css" />
+    <link rel="stylesheet" type="text/css" href="./reset.css" />
+    <link rel="stylesheet" type="text/css" href="./todo-app.css" />
   </head>
   <body class="TodoBody" id="todo_app">
     <main class="TodoAppMain">
       <h1 class="TodoListTitle">My Todo-list</h1>
       <section class="AddTodo">
-        <input class="AddTodo-text" type="text" placeholder="New todo" />
+        <input class="AddTodo-text" type="text" placeholder="New todo text" />
         <input type="date" class="AddTodo-date" />
         <input class="AddTodo-button" type="button" value="Add" />
       </section>
@@ -24,22 +25,19 @@
           <ul class="TodoUl-list">
             <li class="TodoItems-list">
               <label class="TodoItems-container">
-                <input
-                  type="checkbox"
-                  class="DueItem-checkbox"
-                  name="Submit SaaS 201 project target"
-                />
+                <input type="checkbox" class="DueItem-checkbox" />
                 Submit SaaS 201 target.
-                <p class="TodoOverdue-item">Overdue</p>
+                <p class="TodoOverdue-item">
+                  Overdue
+                  <a href="">
+                    <img class="TodoItem_DeleteImg" src="./delete.png" />
+                  </a>
+                </p>
               </label>
             </li>
             <li class="TodoItems-list">
               <label class="TodoItems-container">
-                <input
-                  type="checkbox"
-                  class="DueItem-checkbox"
-                  name="SaaSMinorApproval"
-                />
+                <input type="checkbox" class="DueItem-checkbox" />
                 SaaS Minor Degree Approval.
                 <p class="TodoOverdue-item">
                   <a href="">
@@ -58,29 +56,23 @@
           <ul class="TodoUl-list">
             <li class="TodoItems-list">
               <label class="TodoItems-container">
-                <input
-                  type="checkbox"
-                  class="DueItem-checkbox"
-                  name="Submit SaaS 201 project target Tomorrow"
-                />
+                <input type="checkbox" class="DueItem-checkbox" />
                 Submit SaaS 201 project.
-                <p class="TodoDueTomorrow-item"></p>
+                <p class="TodoDueTomorrow-item">
+                  <a href="">
+                    <img class="TodoItem_DeleteImg" src="./delete.png" />
+                  </a>
+                </p>
               </label>
             </li>
             <li class="TodoItems-list">
               <label class="TodoItems-container">
-                <input
-                  type="checkbox"
-                  class="DueItem-checkbox"
-                  name="Write to University for SaaS Minor Degree Approval."
-                />
+                <input type="checkbox" class="DueItem-checkbox" />
                 Write to University.
                 <p class="TodoDueTomorrow-item">
-                  <!--
-                  <a href=""
-                    ><img height="18px" src="./delete.png" alt="bin"
-                  /></a>
-                   -->
+                  <a href="">
+                    <img class="TodoItem_DeleteImg" src="./delete.png" />
+                  </a>
                 </p>
               </label>
             </li>
@@ -94,35 +86,38 @@
           <ul class="TodoUl-list">
             <li class="TodoItems-list">
               <label class="TodoItems-container">
-                <input
-                  type="checkbox"
-                  class="DueItem-checkbox"
-                  name="SaaS201Level6"
-                />
+                <input type="checkbox" class="DueItem-checkbox" />
                 Target Level 6.
-                <p class="TodoDueLater-item">Oct. 9</p>
+                <p class="TodoDueLater-item">
+                  Oct. 9
+                  <a href="">
+                    <img class="TodoItem_DeleteImg" src="./delete.png" />
+                  </a>
+                </p>
               </label>
             </li>
             <li class="TodoItems-list">
               <label class="TodoItems-container">
-                <input
-                  type="checkbox"
-                  class="DueItem-checkbox"
-                  name="SaaS201Level7"
-                />
+                <input type="checkbox" class="DueItem-checkbox" />
                 Meet students.
-                <p class="TodoDueLater-item">Oct. 11</p>
+                <p class="TodoDueLater-item">
+                  Oct. 11
+                  <a href="">
+                    <img class="TodoItem_DeleteImg" src="./delete.png" />
+                  </a>
+                </p>
               </label>
             </li>
             <li class="TodoItems-list">
               <label class="TodoItems-container">
-                <input
-                  type="checkbox"
-                  class="DueItem-checkbox"
-                  name="SaaS201Level8"
-                />
+                <input type="checkbox" class="DueItem-checkbox" />
                 SaaS 201 Level 8.
-                <p class="TodoDueLater-item">Oct. 15</p>
+                <p class="TodoDueLater-item">
+                  Oct. 15
+                  <a href="">
+                    <img class="TodoItem_DeleteImg" src="./delete.png" />
+                  </a>
+                </p>
               </label>
             </li>
           </ul>
