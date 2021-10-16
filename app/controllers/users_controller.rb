@@ -39,11 +39,12 @@ class UsersController < ApplicationController
     user_email = params[:email]
     passwd = params[:password]
     user = User.find_by(email: user_email, password: passwd)
-    if (user)
-      login_status = true
-    else
-      login_status = false
-    end
-    render plain: "User login status : #{login_status}"
+    render plain: "User login status : #{user.presence?}"
+    # if (user)
+    #   login_status = true
+    # else
+    #   login_status = false
+    # end
+    # render plain: "User login status : #{login_status}"
   end
 end

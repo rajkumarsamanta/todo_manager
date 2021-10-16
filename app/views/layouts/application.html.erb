@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TodoManager</title>
+    <title>RKS TodoManager</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
   </head>
 
-  <body>
+  <body class="TodoBody" >
+    <h1 style="background-color:darkblue;color:white;text-align:center;">RKS Todo Application </h1>
     <%= yield %>
+    <h3 style="background-color:lightgreen;color:blue;text-align:center;margin-top:10px;">@rks durgapur </h3>
   </body>
 </html>
