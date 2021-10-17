@@ -9,14 +9,14 @@
               <% if !todo.completed ||section_title != "Overdue"%>
                 <li class="TodoItems-list">
                   <label class="TodoItems-container">
-                  <% if todo.completed %>
-                    <input type="checkbox" class="DueItem-checkbox" checked/>
-                      <p class="StrikeThrough-text">
-                        <%= todo.todo_text %> </p>
-                  <%else %>
-                    <input type="checkbox" class="DueItem-checkbox" />
-                      <%= todo.todo_text %>
-                  <%end %>
+                    <%= form_with(url:"/todos/#{todo.id}", method:"PUT") do %>
+                       <input type="checkbox" class="DueItem-checkbox" name ="completed"
+                            <%= todo.completed ? "checked" : "" %>
+                            onclick="this.form.submit()"
+                        />
+                    <% end %>
+                        <p class= <%=todo.completed ? "StrikeThrough-text" : ""%> >
+                            <%= todo.todo_text %> </p>
                     <% if show_due_date %>
                       <p class="TodoOverdue-item"><%= todo.due_date.to_s(:short) %></p>
                     <% end %>
