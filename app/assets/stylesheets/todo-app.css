@@ -6,6 +6,9 @@
   padding: 40px;
 }
 
+.StrikeThrough-text {
+  text-decoration-line: line-through;
+}
 .TodoH1 {
   margin-left: 2px;
   margin-bottom: 8px;

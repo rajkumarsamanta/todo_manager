@@ -6,22 +6,29 @@
         <div>
           <ul class="TodoUl-list">
             <% todos.each do |todo| %>
-              <li class="TodoItems-list">
-                <label class="TodoItems-container">
-                  <input type="checkbox" class="DueItem-checkbox" />
-                  <%= todo.todo_text %>
+              <% if !todo.completed ||section_title != "Overdue"%>
+                <li class="TodoItems-list">
+                  <label class="TodoItems-container">
+                  <% if todo.completed %>
+                    <input type="checkbox" class="DueItem-checkbox" checked/>
+                    <p class="StrikeThrough-text">
+                    <%= todo.todo_text %> </p>
+                  <%else %>
+                    <input type="checkbox" class="DueItem-checkbox" />
+                    <%= todo.todo_text %>
+                  <%end %>
+                    <% if show_due_date %>
+                      <p class="TodoOverdue-item"><%= todo.due_date.to_s(:short) %></p>
+                    <% end %>
 
-                  <% if show_due_date %>
-                    <p class="TodoOverdue-item"><%= todo.due_date.to_s(:short) %></p>
-                  <% end %>
-
-                  <p class="TodoOverdue-item">
-                  <a href="">
-                    <img class="TodoItem_DeleteImg" src="./delete.png" />
-                  </a>
-                </p>
-                </label>
-              </li>
+                    <p class="TodoOverdue-item">
+                    <a href="">
+                      <img class="TodoItem_DeleteImg" src="./delete.png" />
+                    </a>
+                  </p>
+                  </label>
+                </li>
+              <% end %>
             <% end %>
           </ul>
         </div>
