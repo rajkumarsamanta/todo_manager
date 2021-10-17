@@ -1,11 +1,11 @@
 
 <main class="TodoAppMain">
   <h1 class="TodoListTitle">My Todo-list</h1>
-  <section class="AddTodo">
-    <input class="AddTodo-text" type="text" placeholder="New todo text" />
-    <input type="Date" class="AddTodo-date" />
-    <input class="AddTodo-button" type="button" value="Add" />
-  </section>
+  <form class="AddTodo" action="/todos" method="POST">
+    <input class="AddTodo-text" type="text" placeholder="New todo text" name="todo_text"/>
+    <input type="Date" class="AddTodo-date" name="due_date"/>
+    <input class="AddTodo-button" type="submit" value="Add" />
+  </form>
   <%=render partial: "todos_section", locals: {
     section_title:"Overdue",
     todos: Todo.overdue,
