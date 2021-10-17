@@ -22,8 +22,10 @@
                     <% end %>
 
                     <p class="TodoOverdue-item">
-                      <a href="">
-                        <img class="TodoItem_DeleteImg" src="./delete.png" />
+                      <a href="javascript:void(0)">
+                      <%= form_with(url:"/todos/#{todo.id}", method:"DELETE") do %>
+                        <input class="TodoItem_DeleteImg" type="image" src="./delete.png">
+                      <% end%>
                       </a>
                     </p>
                   </label>
