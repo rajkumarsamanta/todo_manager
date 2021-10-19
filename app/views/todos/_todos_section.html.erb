@@ -11,11 +11,10 @@
                 <li class="TodoItems-list">
                   <label class="TodoItems-container">
                     <%= form_with(url: "/todos/#{todo.id}", method: "PUT") do %>
-                       <input type="checkbox" class="DueItem-checkbox"
-                          name ="completed"
-                          <%= todo.completed ? "checked" : "" %>
-                          onclick="this.form.submit()"
-                        />
+                      <%= check_box_tag("completed", nil, todo.completed,
+                          :class=>"DueItem-checkbox", :onclick=>"this.form.submit()")
+                      %>
+
                     <% end %>
                     <p class= <%= todo.completed ? "StrikeThrough-text" : "" %> >
                       <%= todo.todo_text %>
@@ -25,13 +24,12 @@
                         <%= todo.due_date.to_s(:short) %>
                       </p>
                     <% end %>
-
                     <p class="TodoOverdue-item" >
                       <a href="javascript:void(0)" >
                         <%= form_with(url: "/todos/#{todo.id}", method: "DELETE") do %>
-                          <input class="TodoItem_DeleteImg"
-                                  type="image" src="./delete.png"
-                          >
+                          <%= image_submit_tag("/delete.png",
+                              :class=>"TodoItem_DeleteImg" )
+                          %>
                         <% end%>
                       </a>
                     </p>
