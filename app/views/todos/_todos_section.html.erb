@@ -1,36 +1,42 @@
-<section class="TodoSection">
-        <div class="DueToday-div">
-          <p class="DueToday-title"><%= section_title %></p>
-          <p class="DueToday-count"><%= todos.completed.count%>/<%= todos.count %></p>
+<section class = "TodoSection" >
+        <div class = "DueToday-div">
+          <p class="DueToday-title"> <%= section_title %> </p>
+          <p class="DueToday-count"> <%= todos.completed.count %>
+            / <%= todos.count %>
+          </p>
         </div>
         <div>
           <ul class="TodoUl-list">
             <% todos.each do |todo| %>
-              <% if !todo.completed ||section_title != "Overdue"%>
                 <li class="TodoItems-list">
                   <label class="TodoItems-container">
-                    <%= form_with(url:"/todos/#{todo.id}", method:"PUT") do %>
-                       <input type="checkbox" class="DueItem-checkbox" name ="completed"
-                            <%= todo.completed ? "checked" : "" %>
-                            onclick="this.form.submit()"
+                    <%= form_with(url: "/todos/#{todo.id}", method: "PUT") do %>
+                       <input type="checkbox" class="DueItem-checkbox"
+                          name ="completed"
+                          <%= todo.completed ? "checked" : "" %>
+                          onclick="this.form.submit()"
                         />
                     <% end %>
-                        <p class= <%=todo.completed ? "StrikeThrough-text" : ""%> >
-                            <%= todo.todo_text %> </p>
+                    <p class= <%= todo.completed ? "StrikeThrough-text" : "" %> >
+                      <%= todo.todo_text %>
+                    </p>
                     <% if show_due_date %>
-                      <p class="TodoOverdue-item"><%= todo.due_date.to_s(:short) %></p>
+                      <p class="TodoOverdue-item" >
+                        <%= todo.due_date.to_s(:short) %>
+                      </p>
                     <% end %>
 
-                    <p class="TodoOverdue-item">
-                      <a href="javascript:void(0)">
-                      <%= form_with(url:"/todos/#{todo.id}", method:"DELETE") do %>
-                        <input class="TodoItem_DeleteImg" type="image" src="./delete.png">
-                      <% end%>
+                    <p class="TodoOverdue-item" >
+                      <a href="javascript:void(0)" >
+                        <%= form_with(url: "/todos/#{todo.id}", method: "DELETE") do %>
+                          <input class="TodoItem_DeleteImg"
+                                  type="image" src="./delete.png"
+                          >
+                        <% end%>
                       </a>
                     </p>
                   </label>
                 </li>
-              <% end %>
             <% end %>
           </ul>
         </div>
