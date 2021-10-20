@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    render plain: User.all.to_displayable_list.join("\n") #"Hello,  This is /users!"
+    render plain: User.all.to_displayable_list.join("\n")
   end
 
   def show
@@ -40,11 +40,5 @@ class UsersController < ApplicationController
     passwd = params[:password]
     user = User.find_by(email: user_email, password: passwd)
     render plain: "User login status : #{user.presence?}"
-    # if (user)
-    #   login_status = true
-    # else
-    #   login_status = false
-    # end
-    # render plain: "User login status : #{login_status}"
   end
 end

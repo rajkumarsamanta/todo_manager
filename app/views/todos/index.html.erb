@@ -3,7 +3,7 @@
   <h1 class="TodoListTitle">Rajkumar's Todo-list</h1>
   <%= form_with(url: "/todos", method: "POST", class: "AddTodo") do %>
     <%= text_field_tag 'todo_text', nil, placeholder: 'New todo text ...',
-       class: "AddTodo-text"
+       class: "AddTodo-text", autofocus: true
     %>
     <%= date_field_tag "due_date", nil, placeholder: "dd/mm/yyyy",
           class: "AddTodo-date"
