@@ -1,2 +1,23 @@
-<p>Welcome to the Todo Home page </p>
-<p>If you are a new user, <a href="/users/new">please sign-up here</a></p>
+<p class="Home-title">Welcome to the Todo Manager Home page </p>
+
+<p class = "NewUser-title">Login</p>
+<section class="Home-authenticate">
+  <%= form_with url: new_sessions_path do |form| %>
+    <div class="Form-section">
+      <p>Email</p>
+      <%= form.email_field :email, class: "Form-input" %>
+    </div>
+    <div class="Form-section">
+      <p>Password</p>
+     <%= form.password_field :password, class: "Form-input" %>
+    </div>
+    <div class="Form-section">
+      <%= form.submit "Sign-in", class: "Submit-button" %>
+    </div>
+  <% end %>
+</section>
+
+<%# <p>If you are an existing user, <%= link_to "please sign-in here", new_sessions_path %> </p>
+<p class="Home-authenticate">
+  If you are a new user, <%= link_to "please sign-up here", new_user_path %>
+</p>
