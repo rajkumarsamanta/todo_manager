@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RKS Todo Manager</title>
+    <title>Todo App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,8 +12,9 @@
 
   <body class="TodoBody" >
     <% if @current_user %>
-      <h1 style="background-color:darkblue;color:white;text-align:center;">
-        <%= @current_user.first_name %> Todo Application
+      <h1 class="HomeUser-salutation">
+        <%= @current_user.first_name %>'s Todo Manager
+        <%= link_to "Sign-out", destroy_session_path, method: "delete" %>
       </h1>
     <% end %>
 

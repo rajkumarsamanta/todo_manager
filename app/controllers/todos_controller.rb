@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  skip_before_action :ensure_user_logged_in
+
   def index
     render "index", locals: { user_name: current_user.first_name }
   end
