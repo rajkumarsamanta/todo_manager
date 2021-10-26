@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   def index
-    render "index"
+    render "index", locals: { user_name: current_user.first_name }
   end
 
   def show
