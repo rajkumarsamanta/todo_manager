@@ -1,13 +1,14 @@
 class TodosController < ApplicationController
-  skip_before_action :ensure_user_logged_in
+  #skip_before_action :ensure_user_logged_in
 
   def index
-    render "index", locals: { user_name: current_user.first_name }
+    @todos = Todo.where(user_id: current_user.id)
+    render "index"
   end
 
   def show
     id = params[:id]
-    Todo.find(id)
+    todo = Todo.of_user(current_user)
     render "todo"
   end
 
@@ -18,6 +19,7 @@ class TodosController < ApplicationController
       todo_text: todo_text,
       due_date: due_date,
       completed: false,
+      user_id: current_user.id,
     )
     redirect_to todos_path
   end
@@ -25,7 +27,7 @@ class TodosController < ApplicationController
   def update
     id = params[:id]
     completed = params[:completed]
-    todo = Todo.find(id)
+    todo = Todo.of_user(current_user).find(id)
     todo.completed = completed
     todo.save!
     redirect_to todos_path
@@ -33,7 +35,7 @@ class TodosController < ApplicationController
 
   def destroy
     id = params[:id]
-    todo = Todo.find(id)
+    todo = Todo.of_user(current_user).find(id)
     todo.destroy
     redirect_to todos_path
   end
