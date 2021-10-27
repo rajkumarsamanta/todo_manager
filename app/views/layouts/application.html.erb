@@ -16,11 +16,10 @@
         <%= @current_user.first_name %>'s Todo Manager
         <%= link_to "Sign-out", destroy_session_path, method: "delete" %>
       </h1>
-    <% else %>
+    <% end %>
       <p class="Flash-message">
         <%= flash[:error] %>
       </p>
-    <% end %>
 
     <%= yield %>
     <h3 style="background-color:lightgreen;color:blue;text-align:center;margin-top:10px;">@rks durgapur </h3>
