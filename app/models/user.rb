@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  validates :email, presence: true
+  validates :password, presence: true
+  validates :password, length: { minimum: 4 }
+
   has_secure_password
   has_many :todos
 
