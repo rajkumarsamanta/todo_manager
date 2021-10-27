@@ -5,6 +5,14 @@
   text-align: center;
 }
 
+.Flash-message {
+  font-size: 15px;
+  color: red;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
 .Form-section {
   margin-bottom: 20px;
   text-align: center;

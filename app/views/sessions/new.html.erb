@@ -1,3 +1,4 @@
+<p class="Home-title">Welcome to the Todo Manager Home page </p>
 <p class = "NewUser-title">Sign-in</p>
 <section class="UsersNew">
   <%= form_with url: sessions_path do |form| %>
@@ -14,3 +15,6 @@
     </div>
   <% end %>
 </section>
+<p class="Home-authenticate">
+  If you are a new user, <%= link_to "sign up here", new_user_path %>
+</p>
