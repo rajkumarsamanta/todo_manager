@@ -1,13 +1,19 @@
 class TodosController < ApplicationController
   def index
-    @todos = Todo.where(user_id: current_user.id)
+    #@todos = Todo.where(user_id: current_user.id)
+    @todos = current_user.todos
     render "index"
   end
 
   def show
     id = params[:id]
-    todo = Todo.of_user(current_user)
-    render "todo"
+    todo = current_user.todos.find(id)
+    if todo
+      render plain "Hey #{current_user.first_name} ! #{todo.todo_text} is due on #{todo.due_date}"
+    else
+      flash[:error] = todo.errors.full_messages.join(", ")
+      redirect_to todos_path
+    end
   end
 
   def create

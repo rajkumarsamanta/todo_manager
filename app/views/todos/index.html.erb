@@ -2,24 +2,22 @@
 <main class="TodoAppMain">
   <%= form_with(url: "/todos", method: "POST", class: "AddTodo") do %>
     <%= text_field_tag 'todo_text', nil, placeholder: 'New todo text ...',
-       class: "AddTodo-text", autofocus: true
+                        class: "AddTodo-text", autofocus: true
     %>
-    <%= date_field_tag "due_date", nil, placeholder: "dd/mm/yyyy",
-          class: "AddTodo-date"
-    %>
+    <%= date_field_tag "due_date", nil, placeholder: "dd/mm/yyyy", class: "AddTodo-date" %>
     <%= button_tag "Add", class: "AddTodo-button" %>
   <% end %>
-  <%=render partial: "todos_section", locals: {
+  <%= render partial: "todos_section", locals: {
     section_title:"Overdue",
     todos: @todos.overdue,
     show_due_date: true
   }  %>
-  <%=render partial: "todos_section", locals: {
+  <%= render partial: "todos_section", locals: {
     section_title:"Due Today",
     todos: @todos.due_today,
     show_due_date: false
   }  %>
-  <%=render partial: "todos_section", locals: {
+  <%= render partial: "todos_section", locals: {
     section_title:"Due Later",
     todos: @todos.due_later,
     show_due_date: true

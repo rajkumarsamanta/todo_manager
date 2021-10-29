@@ -1,8 +1,12 @@
 <section class = "TodoSection" >
         <div class = "DueToday-div">
-          <p class="DueToday-title"> <%= section_title %> </p>
-          <p class="DueToday-count"> <%= todos.completed.count %>
-            / <%= todos.count %>
+          <p class="DueToday-title">
+            <%= section_title %>
+          </p>
+          <p class="DueToday-count">
+            <%= todos.completed.count %>
+            /
+            <%= todos.count %>
           </p>
         </div>
         <div>
@@ -12,24 +16,22 @@
                   <label class="TodoItems-container">
                     <%= form_with(url: "/todos/#{todo.id}", method: "PUT") do %>
                       <%= check_box_tag("completed", nil, todo.completed,
-                          :class=>"DueItem-checkbox", :onclick=>"this.form.submit()")
+                                        :class=>"DueItem-checkbox",
+                                        :onclick=>"this.form.submit()" )
                       %>
-
                     <% end %>
                     <p class= <%= todo.completed ? "StrikeThrough-text" : "" %> >
-                      <%= todo.todo_text %>
+                        <%= todo.todo_text %>
                     </p>
                     <% if show_due_date %>
-                      <p class="TodoOverdue-item" >
-                        <%= todo.due_date.to_s(:short) %>
+                      <p class="TodoOverdue-item">
+                          <%= todo.due_date.to_s(:short) %>
                       </p>
                     <% end %>
                     <p class="TodoOverdue-item" >
                       <a href="javascript:void(0)" >
                         <%= form_with(url: "/todos/#{todo.id}", method: "DELETE") do %>
-                          <%= image_submit_tag("/delete.png",
-                              :class=>"TodoItem_DeleteImg" )
-                          %>
+                          <%= image_submit_tag("/delete.png", :class=>"TodoItem_DeleteImg" ) %>
                         <% end%>
                       </a>
                     </p>
