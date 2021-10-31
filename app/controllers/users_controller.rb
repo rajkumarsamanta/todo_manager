@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       redirect_to "/"
     else
       flash[:error] = new_user.errors.full_messages.join(", ")
-      redirect_to "/"
+      redirect_to new_user_path
     end
   end
 end
