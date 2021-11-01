@@ -13,6 +13,5 @@ that already exists in the database for a registered user.
 
 * User can logged out after managing his/her todos.
 
-![Todo_Manager](/images/todo_scr.png)
-!
+!         [Todo App Screenshot](/images/todo_scr.png)
 
