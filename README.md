@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#This is a [**Todo Manager App**](https://rks-todo-manager-saas-201.herokuapp.com/).
 
-Things you may want to cover:
+##It has the following features:
 
-* Ruby version
+* A user can sign-up or sign-in to manage his/her todos. No user can sign-up with an email 
+that already exists in the database for a registered user.
 
-* System dependencies
+* Can see all the due todos of only logged-in user (not other user's) in the database.
 
-* Configuration
+* Can create a new todo, mark an existing todo as completed or delete an existing todo.
 
-* Database creation
+* User can logged out after managing his/her todos.
 
-* Database initialization
+![Todo_Manager](/images/todo_scr.png)
+Format: ![Alt Text](url)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
