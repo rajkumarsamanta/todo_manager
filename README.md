@@ -1,8 +1,8 @@
 # README
 
-#This is a [**Todo Manager App**](https://rks-todo-manager-saas-201.herokuapp.com/).
+# This is a [**Todo Manager App**](https://rks-todo-manager-saas-201.herokuapp.com/).
 
-##It has the following features:
+## It has the following features:
 
 * A user can sign-up or sign-in to manage his/her todos. No user can sign-up with an email 
 that already exists in the database for a registered user.
@@ -14,5 +14,5 @@ that already exists in the database for a registered user.
 * User can logged out after managing his/her todos.
 
 ![Todo_Manager](/images/todo_scr.png)
-Format: ![Alt Text](url)
+!
 
